@@ -1,5 +1,5 @@
 SELECT 
-	project.name
+	project.name AS 'Project name'
 FROM 
 	dbo.project
 INNER JOIN dbo.position

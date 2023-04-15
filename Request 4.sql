@@ -1,6 +1,6 @@
 SELECT 
-first_name + ' ' + last_name AS 'Employee Name',
-project.name AS 'Project Name',
+first_name + ' ' + last_name AS 'Employee name',
+project.name AS 'Project name',
 project.max_sum_rate - position.rate - CAST(equipment.price AS FLOAT)/12 AS Difference
 FROM employee
 INNER JOIN project
