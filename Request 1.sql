@@ -1,0 +1,1 @@
+SELECT * FROM dbo.employee WHERE project_id IS NULL
