@@ -1,8 +1,8 @@
-SELECT 
-	project.name AS 'Project name'
-FROM 
-	dbo.project
-INNER JOIN dbo.position
-	on project.id = position.id
-WHERE
-	position.rate > project.max_sum_rate
+SELECT project.name
+FROM project
+WHERE (
+    SELECT SUM(position.rate)
+    FROM position
+    INNER JOIN employee ON position.id = employee.position_id
+    WHERE employee.project_id = project.id
+    ) > project.max_sum_rate;
